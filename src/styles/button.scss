@@ -3,6 +3,7 @@
 
 .Button {
 	font-size: 12px;
+	font-weight: 700;
 	padding: 10px 20px;
 	border-radius: 30px;
 	display: inline-block;
@@ -29,7 +30,7 @@
 	&.white {
 		color: var.$color-bright-red;
 		background-color: var.$color-white;
-		box-shadow: 1px 1px 10px var.$color-white;	
+		box-shadow: 1px 1px 10px var.$color-dark-grayish-blue;	
 		
 		&:hover,
 		&:active {

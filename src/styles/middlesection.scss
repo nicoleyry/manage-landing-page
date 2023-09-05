@@ -3,11 +3,11 @@
 .MiddleSection {
 	padding: 0 120px;
 	background-image: url("../assets/images/bg-tablet-pattern.svg");
-	background-position: -60% 100%;
+	background-position: -60% 55%;
 	background-repeat: no-repeat;
 	background-size: 50%;
 	position: relative;
-	height: 800px;
+	height: 1050px;
 
 	& .upper {
 		$gap: 50px;
@@ -68,6 +68,8 @@
 		}
 
 		& .testimonials-slider {
+			margin-bottom: 50px;
+
 			& .slide-box {
 
 				& .avatar {

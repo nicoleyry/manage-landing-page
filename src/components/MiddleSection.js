@@ -114,6 +114,7 @@ export default function MiddleSection() {
 						</div>
 					</SwiperSlide>
 				</Swiper>
+				<Button orangeBtn={true} text='Get Started' />
 			</div>
 		</div>
 	);

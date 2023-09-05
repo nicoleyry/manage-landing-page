@@ -1,0 +1,15 @@
+@use "./variables" as var;
+
+
+.BottomSection {
+	background: url('../assets/images/bg-simplify-section-desktop.svg'), var.$color-bright-red;
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: top right;
+	padding: 50px 120px;
+	color: var.$color-white;
+	display: grid;
+	grid-template-columns: 40% 120px;
+	align-items: center;
+	justify-content: space-between;
+}
