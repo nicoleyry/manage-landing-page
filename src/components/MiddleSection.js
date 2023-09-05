@@ -1,5 +1,4 @@
 import '../styles/middlesection.scss';
-import { useRef, useEffect, useState } from 'react';
 import Button from './Button';
 import AvatarAnisha from '../assets/images/avatar-anisha.png';
 import AvatarAli from '../assets/images/avatar-ali.png';
@@ -11,17 +10,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 export default function MiddleSection() {
-	const [totalHeight, setTotalHeight] = useState();
-	const upperRef = useRef();
-	const bottomRef = useRef();
-
-	useEffect(() => {
-		setTotalHeight(upperRef.current.clientHeight + bottomRef.current.clientHeight);
-	}, [upperRef, bottomRef]);
-
 	return (
-		<div className='MiddleSection' style={{ height: `${totalHeight}px` }}>
-			<div className='upper' ref={upperRef}>
+		<div className='MiddleSection'>
+			<div className='upper'>
 				<div className='left'>
 					<h1 className='title'>What's different about Manage?</h1>
 					<p className='subtitle'>
@@ -64,7 +55,7 @@ export default function MiddleSection() {
 					</div>
 				</div>
 			</div>
-			<div className='bottom' ref={bottomRef}>
+			<div className='bottom'>
 				<h1 className='title'>What they've said</h1>
 				<Swiper
 					slidesPerView={3}
