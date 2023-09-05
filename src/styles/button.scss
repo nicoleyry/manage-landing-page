@@ -1,0 +1,39 @@
+@use "./variables" as var;
+@use "./mixins" as mix;
+
+.Button {
+	font-size: 12px;
+	padding: 10px 20px;
+	border-radius: 30px;
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+
+	@include mix.disable-selected();
+
+	&:active {
+		transform: translateY(1px);
+	}
+
+	&.orange {
+		color: var.$color-white;
+		background-color: var.$color-bright-red;
+		box-shadow: 1px 1px 10px var.$color-bright-red;	
+		
+		&:hover,
+		&:active {
+			background-color: rgba(var.$color-bright-red, 0.8);
+		}
+	}
+
+	&.white {
+		color: var.$color-bright-red;
+		background-color: var.$color-white;
+		box-shadow: 1px 1px 10px var.$color-white;	
+		
+		&:hover,
+		&:active {
+			background-color: rgba(var.$color-white, 0.8);
+		}
+	}
+}

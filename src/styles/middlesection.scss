@@ -1,0 +1,47 @@
+@use "./variables" as var;
+
+.MiddleSection {
+	$gap: 50px;
+	display: grid;
+	grid-template-columns: repeat(2, calc((100% - $gap) / 2));
+	gap: $gap;
+	padding: 0 120px;
+
+	& .left {
+		& .title {
+			margin-bottom: 30px;
+			color: var.$color-dark-blue;
+			font-size: 30px;
+		}
+
+		& .subtitle {
+			width: 60%;
+			margin-bottom: 30px;
+			font-size: 14px;
+			color: var.$color-dark-grayish-blue;
+		}
+	}
+
+	& .right {
+		& .list {
+			$gap: 20px;
+			display: grid;
+			grid-template-columns: 12% calc(100% - 12% - 30px);
+			gap: 30px;
+			align-items: start;
+			margin-bottom: 30px;
+
+			& .text {
+				& .list-title {
+					color: var.$color-dark-blue;
+					margin-bottom: 20px;
+					font-weight: 700;
+				}
+				& .list-desc {
+					color: var.$color-dark-grayish-blue;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}

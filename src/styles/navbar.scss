@@ -1,0 +1,38 @@
+@use "./variables" as var;
+@use "./mixins" as mix;
+
+.Navbar {
+	padding: 50px 0;
+
+	& .nav-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		& .nav-left {
+			& .logo {
+				cursor: pointer;
+			}
+		}
+
+		& .nav-middle {
+			display: flex;
+			justify-content: space-around;
+			gap: 25px;
+
+			& .nav-menu {
+				color: var.$color-dark-blue;
+				cursor: pointer;
+				@include mix.disable-selected;
+
+				&:hover,
+				&:active {
+					color: var.$color-dark-grayish-blue;
+				}
+				&:active {
+					transform: translateY(1px);
+				}
+			}
+		}
+	}
+}
