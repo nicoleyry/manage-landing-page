@@ -7,16 +7,25 @@
 	background-repeat: no-repeat;
 	background-size: 50%;
 	position: relative;
-	height: 1050px;
+	min-height: 1050px;
+	height: auto;
 	
 	@include mix.page-main-padding();
 
+	
+	@media screen and (max-width: var.$breakpoint-m) {
+		min-height: 1150px;
+	}
+
 	@media screen and (max-width: var.$breakpoint-s) {
 		background-image: none;
-		min-height: 1200px;
-		height: auto;
+		min-height: 1000px;
 		padding-left: 0 !important;
 		padding-right: 0 !important;
+	}
+	
+	@media screen and (max-width: var.$breakpoint-xs) {
+		min-height: 1200px;
 	}
 
 	& .upper {
