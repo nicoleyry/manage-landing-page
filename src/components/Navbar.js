@@ -1,8 +1,13 @@
 import '../styles/navbar.scss';
 import Logo from '../assets/images/logo.svg';
+import Burger from '../assets/images/icon-hamburger.svg';
 import Button from './Button';
 
 export default function navbar() {
+	let openMenu = () => {
+		console.log('Open Menu');
+	};
+
 	return (
 		<div className='Navbar'>
 			<div className='nav-container'>
@@ -18,6 +23,7 @@ export default function navbar() {
 				</div>
 				<div className='nav-right'>
 					<Button orangeBtn={true} text='Get Started' />
+					<img className='burger' onClick={openMenu} src={Burger} alt='burger-menu' />
 				</div>
 			</div>
 		</div>

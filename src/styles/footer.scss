@@ -7,11 +7,30 @@
 	padding: 50px 0;
 	@include mix.page-main-padding();
 
+	@media screen and (max-width: var.$breakpoint-s) {
+		padding: 40px 20px 20px;
+	}
+
 	& .container {
+		position: relative;
 		min-height: 130px;
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: auto;
+		grid-template-areas: 'column1 column2 column3 column4';
 		justify-items: center;
+
+		@media screen and (max-width: var.$breakpoint-s) {
+			min-height: 220px;
+			max-width: 300px;
+			margin: 0 auto;
+			padding-bottom: 20px;
+			grid-template-columns:  repeat(2, 1fr);
+			grid-template-rows: repeat(3, auto);
+			grid-template-areas: 'row1 row1' 'row21 row22' 'row3 row3';
+			justify-content: space-evenly;
+			gap: 40px;
+		}
 
 		& .column {
 			display: flex;
@@ -19,14 +38,32 @@
 			justify-content: space-between;
 
 			&-1 {
+				grid-area: column1;
+
+				@media screen and (max-width: var.$breakpoint-s) {
+					grid-area: row3;
+					margin-bottom: 30px;
+					gap: 40px;
+					justify-self: stretch;
+				}
+
 				& .logo {
 					cursor: pointer;
+					margin: 0 auto;
+
+					@media screen and (max-width: var.$breakpoint-s) {
+						order: 2;
+					}
 				}
 	
 				& .social-media-container {
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
+
+					@media screen and (max-width: var.$breakpoint-s) {
+						order: 1;
+					}
 	
 					& svg {
 						cursor: pointer;
@@ -39,14 +76,48 @@
 				}
 			}
 
+			&-2 {
+				grid-area: column2;
+
+				@media screen and (max-width: var.$breakpoint-s) {
+					grid-area: row21;
+					gap: 15px;
+				}
+			}
+
+			&-3 {
+				grid-area: column3;
+
+				@media screen and (max-width: var.$breakpoint-s) {
+					grid-area: row22;
+					gap: 15px;
+				}
+			}
+
 			&-4 {
+				grid-area: column4;
+
+				@media screen and (max-width: var.$breakpoint-s) {
+					grid-area: row1;
+
+					justify-self: stretch;
+				}
+
 				& .subscription {
 					& .subscribe-form {
+						display: flex;
+						gap: 10px;
+
 						& .subscribe {
+							width: auto;
 							padding: 10px 0 10px 15px;
 							border-radius: 20px;
 							border: none;
-							margin-right: 10px;
+
+							@media screen and (max-width: var.$breakpoint-s) {
+								padding: 10px 10px 10px 15px;
+								flex-grow: 1;
+							}
 	
 							&::placeholder {
 								color: var.$color-dark-grayish-blue;
@@ -56,6 +127,10 @@
 							&:focus {
 								outline: none;
 							}
+						}
+
+						& .Button {
+							box-shadow: none;
 						}
 
 						&.error {
@@ -100,6 +175,15 @@
 					text-align: right;
 					font-size: 10px;
 					color: var.$color-dark-grayish-blue;
+					white-space: nowrap;
+
+					@media screen and (max-width: var.$breakpoint-s) {
+						position: absolute;
+						transform: translate(-50%, -50%);
+						left: 50%;
+						bottom: 0;
+						text-align: center;
+					}
 				}
 			}
 

@@ -20,6 +20,10 @@
 			justify-content: space-around;
 			gap: 25px;
 
+			@media screen and (max-width: var.$breakpoint-m) {
+				display: none;
+			}
+
 			& .nav-menu {
 				color: var.$color-dark-blue;
 				cursor: pointer;
@@ -31,6 +35,21 @@
 				}
 				&:active {
 					transform: translateY(1px);
+				}
+			}
+		}
+
+		& .nav-right {
+			& .Button {
+				@media screen and (max-width: var.$breakpoint-m) {
+					display: none;
+				}
+			}
+			& .burger {
+				display: none;
+
+				@media screen and (max-width: var.$breakpoint-m) {
+					display: block;
 				}
 			}
 		}

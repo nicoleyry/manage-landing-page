@@ -10,8 +10,19 @@
 	color: var.$color-white;
 	display: grid;
 	grid-template-columns: 40% 120px;
+	grid-template-rows: auto;
 	align-items: center;
 	justify-content: space-between;
 
 	@include mix.page-main-padding();
+
+	@media screen and (max-width: var.$breakpoint-s) {
+		grid-template-columns: auto;
+		grid-template-rows: auto auto;
+		justify-items: center;
+		justify-content: center;
+		gap: 20px;
+		text-align: center;
+		padding: 60px 30px;
+	}
 }

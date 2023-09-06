@@ -4,12 +4,20 @@ import AvatarAnisha from '../assets/images/avatar-anisha.png';
 import AvatarAli from '../assets/images/avatar-ali.png';
 import AvatarRichard from '../assets/images/avatar-richard.png';
 import AvatarShanai from '../assets/images/avatar-shanai.png';
+import { useEffect, useState } from 'react';
 
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 export default function MiddleSection() {
+	const [smallScreen, setSmallScreen] = useState(false);
+
+	useEffect(() => {
+		let mediaQuery = window.matchMedia('(max-width: 700px)');
+		mediaQuery.matches ? setSmallScreen(true) : setSmallScreen(false);
+	}, []);
+
 	return (
 		<div className='MiddleSection'>
 			<div className='upper'>
@@ -22,9 +30,12 @@ export default function MiddleSection() {
 				</div>
 				<div className='right'>
 					<div className='list'>
-						<Button orangeBtn={true} text='01' />
+						{!smallScreen && <Button orangeBtn={true} text='01' />}
 						<div className='text'>
-							<div className='list-title'>Track company-wide progress</div>
+							<div className='list-title-block'>
+								{smallScreen && <Button orangeBtn={true} text='01' />}
+								<div className='list-title'>Track company-wide progress</div>
+							</div>
 							<div className='list-desc'>
 								See how your day-to-day tasks fit into the wider vision. Go from tracking progress at
 								the milestone level all the way done to the smallest of details. Never lose sight of the
@@ -33,9 +44,12 @@ export default function MiddleSection() {
 						</div>
 					</div>
 					<div className='list'>
-						<Button orangeBtn={true} text='02' />
+						{!smallScreen && <Button orangeBtn={true} text='02' />}
 						<div className='text'>
-							<div className='list-title'>Advanced built-in reports</div>
+							<div className='list-title-block'>
+								{smallScreen && <Button orangeBtn={true} text='02' />}
+								<div className='list-title'>Advanced built-in reports</div>
+							</div>
 							<div className='list-desc'>
 								Set internal delivery estimates and track progress toward company goals. Our
 								customisable dashboard helps you build out the reports you need to keep key stakeholders
@@ -44,9 +58,12 @@ export default function MiddleSection() {
 						</div>
 					</div>
 					<div className='list'>
-						<Button orangeBtn={true} text='03' />
+						{!smallScreen && <Button orangeBtn={true} text='03' />}
 						<div className='text'>
-							<div className='list-title'>Everything you need in one place</div>
+							<div className='list-title-block'>
+								{smallScreen && <Button orangeBtn={true} text='03' />}
+								<div className='list-title'>Everything you need in one place</div>
+							</div>
 							<div className='list-desc'>
 								Stop jumping from one service to another to communicate, store files, track tasks and
 								share documents. Manage offers an all-in-one team productivity solution.
@@ -58,11 +75,8 @@ export default function MiddleSection() {
 			<div className='bottom'>
 				<h1 className='title'>What they've said</h1>
 				<Swiper
-					slidesPerView={3}
+					slidesPerView={`${smallScreen ? '1' : '3'}`}
 					spaceBetween={30}
-					pagination={{
-						clickable: true,
-					}}
 					className='testimonials-slider'
 				>
 					<SwiperSlide>
