@@ -1,4 +1,5 @@
 @use "./variables" as var;
+@use "./mixins" as mix;
 
 .TopSection {
 	width: 100%;
@@ -7,8 +8,9 @@
 	background-position: 115% 400%;
 	background-repeat: no-repeat;
 	background-size: 50%;
-	padding: 0 120px;
 	margin-bottom: 50px;
+
+	@include mix.page-main-padding();
 
 	& .intro {
 		$gap: 50px;

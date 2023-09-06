@@ -1,7 +1,7 @@
 import '../styles/button.scss';
 
-export default function Button({text, orangeBtn}) {
+export default function Button({text, orangeBtn, onClick}) {
 	return (
-		<p className={`Button ${orangeBtn ? 'orange'  : 'white'}`}>{text}</p>
+		<p className={`Button ${orangeBtn ? 'orange'  : 'white'}`} onClick={onClick}>{text}</p>
 	)
 };

@@ -1,13 +1,15 @@
 @use "./variables" as var;
+@use "./mixins" as mix;
 
 .MiddleSection {
-	padding: 0 120px;
 	background-image: url("../assets/images/bg-tablet-pattern.svg");
 	background-position: -60% 55%;
 	background-repeat: no-repeat;
 	background-size: 50%;
 	position: relative;
 	height: 1050px;
+	
+	@include mix.page-main-padding();
 
 	& .upper {
 		$gap: 50px;
@@ -39,6 +41,16 @@
 				gap: 30px;
 				align-items: start;
 				margin-bottom: 30px;
+
+				& .Button {
+					cursor: inherit;
+
+					&:hover,
+					&:active {
+						background-color: var.$color-bright-red;
+						transform: translateY(0);
+					}
+				}
 	
 				& .text {
 					& .list-title {

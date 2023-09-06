@@ -1,15 +1,17 @@
 @use "./variables" as var;
-
+@use "./mixins" as mix;
 
 .BottomSection {
 	background: url('../assets/images/bg-simplify-section-desktop.svg'), var.$color-bright-red;
 	background-size: 80%;
 	background-repeat: no-repeat;
 	background-position: top right;
-	padding: 50px 120px;
+	padding: 50px 0;
 	color: var.$color-white;
 	display: grid;
 	grid-template-columns: 40% 120px;
 	align-items: center;
 	justify-content: space-between;
+
+	@include mix.page-main-padding();
 }
