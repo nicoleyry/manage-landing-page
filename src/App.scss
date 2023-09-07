@@ -1,1 +1,23 @@
-.App {}
+.App {
+	position: relative;
+
+	& .attribution {
+		position: absolute;
+		transform: translateX(-50%);
+		left: 50%;
+		bottom: 0px;
+		font-size: 10px;
+		text-align: center;
+		z-index: 1;
+		color: hsl(227, 12%, 61%);
+
+		& a {
+			color: hsl(228, 45%, 44%);
+			text-decoration: none;
+
+			&:hover {
+				color: hsl(228, 36%, 55%);
+			}
+		}
+	}
+}
