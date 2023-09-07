@@ -12,7 +12,7 @@
 	
 	@include mix.page-main-padding();
 
-	
+
 	@media screen and (max-width: var.$breakpoint-m) {
 		min-height: 1150px;
 	}
@@ -158,32 +158,48 @@
 
 		& .testimonials-slider {
 			margin-bottom: 50px;
+			overflow: visible;
 
-			& .slide-box {
-
-				& .avatar {
-					width: 60px;
-				}
-
-				& .review-box {
-					background-color: var.$color-light-gray;
-					padding: 40px 20px 20px;
-					margin-top: -30px;
-					
-					& .name {
-						color: var.$color-dark-blue;
-						font-weight: 700;
-						font-size: 14px;
-						margin-bottom: 10px;
+			& .swiper-wrapper {
+				& .slide-box {
+	
+					& .avatar {
+						width: 60px;
 					}
 	
-					& .review {
-						color: var.$color-dark-grayish-blue;
-						font-size: 12px;
-						line-height: 20px;
+					& .review-box {
+						background-color: var.$color-light-gray;
+						padding: 40px 20px 20px;
+						margin-top: -30px;
+						
+						& .name {
+							color: var.$color-dark-blue;
+							font-weight: 700;
+							font-size: 14px;
+							margin-bottom: 10px;
+						}
+		
+						& .review {
+							color: var.$color-dark-grayish-blue;
+							font-size: 12px;
+							line-height: 20px;
+						}
+					}
+	
+				}
+			}
+
+			& .swiper-pagination {
+				transform: translate3d(0, 30px, 0);
+
+				& .custom-pagination {
+					border: 2px solid var.$color-bright-red;
+					background-color: transparent;
+
+					&.swiper-pagination-bullet-active {
+						background-color: var.$color-bright-red;
 					}
 				}
-
 			}
 		}
 	}

@@ -8,15 +8,24 @@ import { useEffect, useState } from 'react';
 
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/pagination';
 
 export default function MiddleSection() {
 	const [smallScreen, setSmallScreen] = useState(false);
+	let mediaQuery = window.matchMedia('(max-width: 700px)');
+
+	const customPagination = {
+		clickable: true,
+		renderBullet: function (index, className) {
+			return mediaQuery.matches ? `<span class="${className} custom-pagination"></span>` : '';
+		},
+	};
 
 	useEffect(() => {
-		let mediaQuery = window.matchMedia('(max-width: 700px)');
 		mediaQuery.matches ? setSmallScreen(true) : setSmallScreen(false);
-	}, []);
+	}, [mediaQuery.matches]);
 
 	return (
 		<div className='MiddleSection'>
@@ -78,6 +87,8 @@ export default function MiddleSection() {
 					slidesPerView={`${smallScreen ? '1' : '3'}`}
 					spaceBetween={30}
 					className='testimonials-slider'
+					pagination={customPagination}
+					modules={[Pagination]}
 				>
 					<SwiperSlide>
 						<div className='slide-box'>
