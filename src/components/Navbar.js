@@ -6,7 +6,6 @@ import Button from './Button';
 
 export default function navbar({ isOpened, setIsOpened }) {
 	let openMenuHandler = () => {
-		setIsOpened(true);
 		isOpened ? setIsOpened(false) : setIsOpened(true);
 	};
 	let closeMenuHandler = (e) => {
