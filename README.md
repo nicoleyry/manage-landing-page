@@ -9,7 +9,7 @@ This is a solution to the [Manage landing page challenge on Frontend Mentor](htt
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
-  - [Useful resources](#useful-resources)
+  - [Built with](#built-with)
 - [Author](#author)
 
 ## Overview
@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/challenges/manage-landing-page-SLXqC6P5/hub](https://www.frontendmentor.io/challenges/manage-landing-page-SLXqC6P5/hub)
+- Solution URL: [https://www.frontendmentor.io/solutions/responsive-landing-page-using-react-scss-and-swiper-SZhOt91eG4](https://www.frontendmentor.io/solutions/responsive-landing-page-using-react-scss-and-swiper-SZhOt91eG4)
 - Live Site URL: [https://nicoleyry-manage-landing-page.netlify.app/](https://nicoleyry-manage-landing-page.netlify.app/)
 
 ## My process
